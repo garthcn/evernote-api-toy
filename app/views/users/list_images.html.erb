@@ -1,0 +1,8 @@
+<%= render 'pager' %>
+<% if @image_resources.blank? %>
+  <div class="no-result">
+    <h3>No images here</h3>
+  </div>
+<% else %>
+  <%= render 'image_grid' %>
+<% end %>

@@ -1,0 +1,22 @@
+<div class="img-grid clearfix">
+  <% @image_resources.each do |r| %>
+  <a data-toggle="modal" href="<%= '#img-'+r.guid.to_s %>">
+    <div class="grid-item float">
+      <div class="grid-item-container" >
+        <div class="img-container">
+            <%= image_tag image_url(r), :class => 'medium-img ' %>
+          <br />
+        </div>
+        <div class="modal hide fade" id="<%= 'img-'+r.guid.to_s %>">
+          <div class="modal-close">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+            <%= image_tag image_url(r), :class => 'large-img center' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  <% end %>
+</div>

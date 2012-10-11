@@ -1,0 +1,19 @@
+<div>
+  <ul class="pager">
+    <li class="previous <%= 'disabled' unless @current_page > 1 %>">
+    <% if @current_page > 1 %>
+      <a href="/users/list_images?page=<%= @current_page - 1 %>">&larr; Older</a>
+    <% else %>
+      <a href="javascript:void(0)">&larr; Older</a>
+    <% end %>
+    </li>
+    <li class="next <%= 'disabled' unless @has_more %>">
+    <% if @has_more %>
+      <a href="/users/list_images?page=<%= @current_page + 1 %>">Newer &rarr;</a>
+    <% else %>
+      <a href="javascript:void(0)">Newer &rarr;</a>
+    <% end %>
+    </li>
+  </ul>
+</div>
+
